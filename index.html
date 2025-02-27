@@ -50,3 +50,16 @@
                 <option value="rectangle">Rectangle</option>
                 <option value="circle">Circle</option>
             </select>
+            <div id="rectangleInputs">
+                <input type="number" id="length" placeholder="Enter Length">
+                <input type="number" id="width" placeholder="Enter Width">
+            </div>
+            
+            <div id="circleInputs" style="display: none;">
+                <input type="number" id="radius" placeholder="Enter Radius">
+            </div>
+            
+            <button onclick="calculateArea()">Calculate</button>
+            <h3 id="result"></h3>
+        </div>
+    
