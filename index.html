@@ -62,4 +62,44 @@
             <button onclick="calculateArea()">Calculate</button>
             <h3 id="result"></h3>
         </div>
+        <script>
+            function toggleInputs() {
+                let shape = document.getElementById("shape").value;
+                if (shape === "rectangle") {
+                    document.getElementById("rectangleInputs").style.display = "block";
+                    document.getElementById("circleInputs").style.display = "none";
+                } else {
+                    document.getElementById("rectangleInputs").style.display = "none";
+                    document.getElementById("circleInputs").style.display = "block";
+                }
+            }
+    
+            function calculateArea() {
+                let shape = document.getElementById("shape").value;
+                let result = document.getElementById("result");
+                let area;
+    
+                if (shape === "rectangle") {
+                    let length = document.getElementById("length").value;
+                    let width = document.getElementById("width").value;
+                    if (length > 0 && width > 0) {
+                        area = length * width;
+                        result.innerText = "Area of Rectangle: " + area + " sq units";
+                    } else {
+                        result.innerText = "Please enter valid dimensions";
+                    }
+                } else {
+                    let radius = document.getElementById("radius").value;
+                    if (radius > 0) {
+                        area = Math.PI * radius * radius;
+                        result.innerText = "Area of Circle: " + area.toFixed(2) + " sq units";
+                    } else {
+                        result.innerText = "Please enter a valid radius";
+                    }
+                }
+            }
+        </script>
+    </body>
+    </html>
+    
     
